@@ -8,9 +8,9 @@ const RootProviders = ({children}:{children:ReactNode}) => {
         defaultTheme="dark"
         enableSystem
         disableTransitionOnChange
-      >
+    >
         {children}
-      </ThemeProvider>
+    </ThemeProvider>
   )
 }
 
