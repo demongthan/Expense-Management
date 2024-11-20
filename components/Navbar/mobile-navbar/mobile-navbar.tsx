@@ -3,7 +3,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
 import Logo from '../destop-navbar/logo/logo';
-import { items } from '@/lib/Item';
+import { items } from '@/data/item';
 import NavbarItem from '../component/navbar-item/navbar-item';
 import LogoMobile from './logo/logo-mobile';
 import ThemeSwitcherBtn from '../component/them-switcher-btn/theme-switcher-btn';

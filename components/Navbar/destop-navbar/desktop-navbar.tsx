@@ -1,5 +1,5 @@
 import React from 'react'
-import { items } from '@/lib/Item';
+import { items } from '@/data/item';
 import Logo from './logo/logo';
 import NavbarItem from '../component/navbar-item/navbar-item';
 import ThemeSwitcherBtn from '../component/them-switcher-btn/theme-switcher-btn';
