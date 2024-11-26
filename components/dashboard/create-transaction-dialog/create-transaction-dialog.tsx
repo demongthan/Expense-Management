@@ -6,7 +6,6 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
-import { TransactionType } from '@/data/transaction-type'
 import { cn } from '@/lib/utils'
 
 import { Button } from "@/components/ui/button"
@@ -20,6 +19,8 @@ import {
   FormMessage,
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
+import CategoryPicker from '../category-picker/category-picker'
+import { TransactionType } from '@/server'
 
 interface Props{
     trigger:ReactNode,
@@ -31,7 +32,7 @@ const formSchema = z.object({
     description:z.string().optional(),
     date:z.coerce.date(),
     category:z.string(),
-    type:z.union([z.literal("income"), z.literal("expense")])
+    type:z.nativeEnum(TransactionType)
 })
 
 const CreateTransactionDialog = ({trigger, type}:Props) => {
@@ -58,7 +59,7 @@ const CreateTransactionDialog = ({trigger, type}:Props) => {
                 <DialogHeader>
                     <DialogTitle>
                         Create a new {""}
-                        <span className={cn("m-1", type==="income"?"text-emerald-500":"text-red-500")}>{type}</span>
+                        <span className={cn("m-1", type===TransactionType.Income?"text-emerald-500":"text-red-500")}>{type}</span>
                         transaction
                     </DialogTitle>
                 </DialogHeader>
@@ -108,7 +109,7 @@ const CreateTransactionDialog = ({trigger, type}:Props) => {
                                 <FormItem>
                                     <FormLabel>Category</FormLabel>
                                     <FormControl>
-                                        <Input defaultValue={0} {...field} type='number'/>
+                                        <CategoryPicker type={type}></CategoryPicker>
                                     </FormControl>
                                     <FormDescription>
                                         Select a category for this transaction
