@@ -1,8 +1,0 @@
-generatorName: typescript-fetch
-inputSpec: ./openapi.json
-output: ./server
-configOptions:
-  enumPropertyNaming: original
-  modelPropertyNaming: original
-additionalProperties:
-  useSingleRequestParameter: true

@@ -6,9 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "fetch:openapi": "curl -o openapi.json http://localhost:5000/swagger/v1/swagger.json",
-    "generate:api": "npm run fetch:openapi && npx openapi-generator-cli generate -g typescript-fetch -i ./openapi.json -o ./server -c ./openapi-generator-config.yml"
+    "lint": "next lint"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.6.0",
@@ -61,7 +59,6 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@openapitools/openapi-generator-cli": "^2.15.3",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
