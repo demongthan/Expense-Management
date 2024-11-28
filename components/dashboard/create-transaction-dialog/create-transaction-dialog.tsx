@@ -16,11 +16,10 @@ import {
   FormField,
   FormItem,
   FormLabel,
-  FormMessage,
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import CategoryPicker from '../category-picker/category-picker'
-import { TransactionType } from '@/server'
+import { TransactionType } from '@/models/extension/transaction-type'
 
 interface Props{
     trigger:ReactNode,

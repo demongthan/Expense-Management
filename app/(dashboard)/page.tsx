@@ -1,5 +1,6 @@
 import CreateTransactionDialog from '@/components/dashboard/create-transaction-dialog/create-transaction-dialog'
 import { Button } from '@/components/ui/button'
+import { TransactionType } from '@/models/extension/transaction-type'
 import { CircleDollarSign, HandCoins, HandHeart } from 'lucide-react'
 import React from 'react'
 
@@ -17,7 +18,7 @@ const page = () => {
                                     className='border-emerald-500 bg-emerald-950 text-white hover:bg-emerald-700 hover:text-white'>
                                     New income <CircleDollarSign className='ml-2' />
                                 </Button>}
-                            type={'income'}>
+                            type={TransactionType.Income}>
                         </CreateTransactionDialog>
 
                         <CreateTransactionDialog
@@ -26,7 +27,7 @@ const page = () => {
                                     className='border-rose-500 bg-rose-950 text-white hover:bg-rose-700 hover:text-white'>
                                     New Expense <HandCoins className='ml-2'/>
                                 </Button>}
-                            type={'expense'}>
+                            type={TransactionType.Expense}>
                         </CreateTransactionDialog>
                     </div>
                 </div>

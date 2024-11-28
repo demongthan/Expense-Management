@@ -1,4 +1,3 @@
-import { cookies } from 'next/headers'
 import { twMerge } from 'tailwind-merge'
 import jwt from 'jsonwebtoken'
 import { type ClassValue, clsx } from 'clsx'
@@ -35,10 +34,4 @@ export const normalizePath = (path: string) => {
 
 export const decodeJWT = <Payload = any>(token: string) => {
     return jwt.decode(token) as Payload
-}
-
-export const getTokenFromCookies = (): string | null => {
-    const cookieStore = cookies()
-    const token = cookieStore.get('token')?.value
-    return token || null
 }
