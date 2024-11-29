@@ -40,7 +40,6 @@ const CreateTransactionDialog = ({trigger, type}:Props) => {
         defaultValues: {
             type:type,
             date:new Date(),
-
         },
     })
 
