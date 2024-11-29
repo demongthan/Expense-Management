@@ -43,7 +43,7 @@ const CategoryPicker = ({type}:Props) => {
                     e.preventDefault();
                 }}>
                     <CommandInput placeholder='Search category'></CommandInput>
-                    <CreateCategoryDialog></CreateCategoryDialog>
+                    <CreateCategoryDialog type={type}></CreateCategoryDialog>
                 </Command>
             </PopoverContent>
         </Popover>

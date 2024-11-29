@@ -4,3 +4,9 @@ export const TransactionType = {
     Debt: 3
 } as const;
 export type TransactionType = typeof TransactionType[keyof typeof TransactionType];
+
+export const TransactionTypeDisplay: Record<TransactionType, string> = {
+    [TransactionType.Income]: "Income",
+    [TransactionType.Expense]: "Expense",
+    [TransactionType.Debt]: "Debt"
+};

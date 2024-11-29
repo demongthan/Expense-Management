@@ -19,7 +19,7 @@ import {
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import CategoryPicker from '../category-picker/category-picker'
-import { TransactionType } from '@/models/extension/transaction-type'
+import { TransactionType, TransactionTypeDisplay } from '@/models/extension/transaction-type'
 
 interface Props{
     trigger:ReactNode,
@@ -57,8 +57,8 @@ const CreateTransactionDialog = ({trigger, type}:Props) => {
                 <DialogHeader>
                     <DialogTitle>
                         Create a new {""}
-                        <span className={cn("m-1", type===TransactionType.Income?"text-emerald-500":"text-red-500")}>{type}</span>
-                        transaction
+                        <span className={cn("m-1", type===TransactionType.Income?"text-emerald-500":"text-red-500")}>{TransactionTypeDisplay[type]}</span>
+                         transaction
                     </DialogTitle>
                 </DialogHeader>
 
